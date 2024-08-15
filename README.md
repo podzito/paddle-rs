@@ -1,2 +1,4 @@
 # paddle-rs
-Rust bindings for the Paddle Open API Spec
+
+Rust bindings for the Paddle payment entities. Work in progress.
+
