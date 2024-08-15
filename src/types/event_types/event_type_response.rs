@@ -1,6 +1,6 @@
 // MIT License
 
-// Copyright (c) 2024 podzito
+// Copyright (c) 2024 PodZito
 
 // Permission is hereby granted, free of charge, to any person obtaining a copy
 // of this software and associated documentation files (the "Software"), to deal
@@ -21,4 +21,11 @@
 // SOFTWARE.
 
 
-pub mod types;
+// import { type IEventName } from '../../notifications';
+
+// export interface IEventTypeResponse {
+//   name: IEventName;
+//   description: string;
+//   group: string;
+//   available_versions: number[];
+// }
