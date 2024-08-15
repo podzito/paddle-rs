@@ -21,4 +21,5 @@
 // SOFTWARE.
 
 
+pub mod notifications;
 pub mod types;

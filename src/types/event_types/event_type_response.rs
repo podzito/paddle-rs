@@ -21,11 +21,9 @@
 // SOFTWARE.
 
 
-// import { type IEventName } from '../../notifications';
-
-// export interface IEventTypeResponse {
-//   name: IEventName;
-//   description: string;
-//   group: string;
-//   available_versions: number[];
-// }
+pub struct EventTypeResponse {
+  // name: EventName;
+  pub description: String,
+  pub group: String,
+  pub available_versions: Vec<i32>,
+}
