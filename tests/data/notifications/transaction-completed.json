@@ -1,0 +1,134 @@
+{
+  "data": {
+    "address_id": "add_01j5deqw2gxb9sjjyaafpsb1gv",
+    "billed_at": "2024-08-16T11:21:55.413735Z",
+    "billing_details": null,
+    "billing_period": { "ends_at": "2024-08-23T11:21:55.727Z", "starts_at": "2024-08-16T11:21:55.727Z" },
+    "business_id": null,
+    "checkout": { "url": "https://www.podzito.com?_ptxn=txn_01j5deqr3fpdac9n6qm2xez5ch" },
+    "collection_mode": "automatic",
+    "created_at": "2024-08-16T11:21:33.638619Z",
+    "currency_code": "USD",
+    "custom_data": null,
+    "customer_id": "ctm_01j535fawggst1gm3qsyanc0mb",
+    "details": {
+      "adjusted_totals": {
+        "currency_code": "USD",
+        "earnings": "0",
+        "fee": "0",
+        "grand_total": "0",
+        "subtotal": "0",
+        "tax": "0",
+        "total": "0"
+      },
+      "line_items": [
+        {
+          "id": "txnitm_01j5deqwcph4y4r67pa0a1hxhv",
+          "item_id": null,
+          "price_id": "pri_01j52zfss0hcfxamnma1tf42gt",
+          "product": {
+            "created_at": "2024-08-12T09:38:32.005Z",
+            "custom_data": null,
+            "description": "Podzito",
+            "id": "pro_01j52z87e5sdt3p60mmtcavpgt",
+            "image_url": null,
+            "name": "PodZito",
+            "status": "active",
+            "tax_category": "standard",
+            "type": "standard",
+            "updated_at": "2024-08-12T09:38:32.005Z"
+          },
+          "quantity": 1,
+          "tax_rate": "0.2",
+          "totals": { "discount": "0", "subtotal": "0", "tax": "0", "total": "0" },
+          "unit_totals": { "discount": "0", "subtotal": "0", "tax": "0", "total": "0" }
+        }
+      ],
+      "payout_totals": {
+        "balance": "0",
+        "credit": "0",
+        "credit_to_balance": "0",
+        "currency_code": "USD",
+        "discount": "0",
+        "earnings": "0",
+        "exchange_rate": "1",
+        "fee": "0",
+        "fee_rate": "0",
+        "grand_total": "0",
+        "subtotal": "0",
+        "tax": "0",
+        "total": "0"
+      },
+      "tax_rates_used": [
+        { "tax_rate": "0.2", "totals": { "discount": "0", "subtotal": "0", "tax": "0", "total": "0" } }
+      ],
+      "totals": {
+        "balance": "0",
+        "credit": "0",
+        "credit_to_balance": "0",
+        "currency_code": "USD",
+        "discount": "0",
+        "earnings": "0",
+        "fee": "0",
+        "grand_total": "0",
+        "subtotal": "0",
+        "tax": "0",
+        "total": "0"
+      }
+    },
+    "discount_id": null,
+    "id": "txn_01j5deqr3fpdac9n6qm2xez5ch",
+    "invoice_id": null,
+    "invoice_number": null,
+    "items": [
+      {
+        "price": {
+          "billing_cycle": { "frequency": 1, "interval": "month" },
+          "created_at": "2024-08-12T09:42:40.160401Z",
+          "custom_data": { "credits": "25", "storage": "5000" },
+          "description": "PodZito Pro - Monthlu",
+          "id": "pri_01j52zfss0hcfxamnma1tf42gt",
+          "name": "PodZito Pro",
+          "product_id": "pro_01j52z87e5sdt3p60mmtcavpgt",
+          "quantity": { "maximum": 1, "minimum": 1 },
+          "status": "active",
+          "tax_mode": "account_setting",
+          "trial_period": { "frequency": 7, "interval": "day" },
+          "type": "standard",
+          "unit_price": { "amount": "2499", "currency_code": "USD" },
+          "unit_price_overrides": [],
+          "updated_at": "2024-08-13T17:52:09.561748Z"
+        },
+        "price_id": "pri_01j52zfss0hcfxamnma1tf42gt",
+        "proration": null,
+        "quantity": 1
+      }
+    ],
+    "origin": "web",
+    "payments": [
+      {
+        "amount": "0",
+        "captured_at": null,
+        "created_at": "2024-08-16T11:21:53.319173Z",
+        "error_code": null,
+        "method_details": {
+          "card": { "cardholder_name": "AM", "expiry_month": 9, "expiry_year": 2029, "last4": "5556", "type": "visa" },
+          "type": "card"
+        },
+        "payment_attempt_id": "1a0ff7df-8d4d-4d39-8d87-30da9241c7ff",
+        "payment_method_id": "paymtd_01j5derbcksjq5hqdrmxvv8pvt",
+        "status": "authorized",
+        "stored_payment_method_id": "f20525c8-c472-4a58-be09-fbbad6611286"
+      }
+    ],
+    "receipt_data": null,
+    "status": "completed",
+    "subscription_id": "sub_01j5derdrma035t1kjbzxp9cwa",
+    "updated_at": "2024-08-16T11:21:56.31542366Z"
+  },
+  "event_id": "evt_01j5derer6x0b75024w9z8yjqn",
+  "event_type": "transaction.completed",
+  "notification_id": "ntf_01j5derezat2tt64aswa9n99wr",
+  "occurred_at": "2024-08-16T11:21:56.742990Z"
+}
+

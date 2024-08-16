@@ -20,46 +20,21 @@
 // OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
 // SOFTWARE.
 
-use anyhow::Result;
-use derive_builder::Builder;
+use std::fs;
+use rstest::rstest;
 use serde_json::Value;
 
-use crate::notifications::helpers::types::EventName;
+#[rstest]
+#[case("subscription-annual-created.json")]
+#[case("subscription-cancelled.json")]
+#[case("subscription-created.json")]
+#[case("subscription-trial-created.json")]
+#[case("subscription-updated.json")]
+#[case("transaction-completed.json")]
+fn test_sum(#[case] filename: &str) {
+    use paddle::types::notifications::notification::NotificationResponse;
 
-#[derive(Debug, Builder, Clone)]
-pub struct Notification {
-  pub id: String,
-  pub _type: EventName,
-  // status: NotificationStatus;
-  // payload: IEvents;
-  pub occurred_at: String,
-  pub delivered_at: Option<String>,
-  pub replayed_at: Option<String>,
-  // origin: Origin;
-  pub last_attempt_at: Option<String>,
-  pub retry_at: Option<String>,
-  pub times_attempted: i32,
-  pub notification_setting_id: String,
-}
-
-impl TryFrom<Value> for Notification {
-  type Error = anyhow::Error;
-
-  fn try_from(_value: Value) -> Result<Self> {
-    let builder = NotificationBuilder::default();
-    Ok(builder.build()?)
-  }
-}
-
-#[derive(Debug, Builder, Clone)]
-pub struct NotificationResponse {
-  pub data: Notification,
-}
-
-impl TryFrom<Value> for NotificationResponse {
-  type Error = anyhow::Error;
-
-  fn try_from(_value: Value) -> Result<Self> {
-    Ok(NotificationResponseBuilder::default().build()?)
-  }
+  let notification_json = fs::read_to_string(format!("tests/data/notifications/{}", filename)).unwrap();
+  let notification: NotificationResponse = serde_json::from_str::<Value>(&notification_json).unwrap().try_into().unwrap();
+  println!("{:?} {:?}", notification_json, notification);
 }

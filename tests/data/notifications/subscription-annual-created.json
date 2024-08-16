@@ -1,0 +1,92 @@
+{
+  "event_id": "evt_01j5df8eh0030mzjxsdsz6djym",
+  "event_type": "subscription.created",
+  "occurred_at": "2024-08-16T11:30:40.801251Z",
+  "notification_id": "ntf_01j5df8eqbgakbqtxxyxvpgha3",
+  "data": {
+    "id": "sub_01j5df8dwyf7k08x69hgk7gaxf",
+    "items": [
+      {
+        "price": {
+          "id": "pri_01j52zdg8qpzw7ye533v272m2y",
+          "name": "PodZito Std",
+          "type": "standard",
+          "status": "active",
+          "quantity": {
+            "maximum": 1,
+            "minimum": 1
+          },
+          "tax_mode": "account_setting",
+          "created_at": "2024-08-12T09:41:24.887307Z",
+          "product_id": "pro_01j52z87e5sdt3p60mmtcavpgt",
+          "unit_price": {
+            "amount": "12999",
+            "currency_code": "USD"
+          },
+          "updated_at": "2024-08-13T17:51:45.892344Z",
+          "custom_data": {
+            "credits": "10",
+            "storage": "500"
+          },
+          "description": "PodZito Std - Annual",
+          "import_meta": null,
+          "trial_period": null,
+          "billing_cycle": {
+            "interval": "year",
+            "frequency": 1
+          },
+          "unit_price_overrides": []
+        },
+        "status": "active",
+        "product": {
+          "id": "pro_01j52z87e5sdt3p60mmtcavpgt",
+          "name": "PodZito",
+          "type": "standard",
+          "status": "active",
+          "image_url": null,
+          "created_at": "2024-08-12T09:38:32.005Z",
+          "updated_at": "2024-08-12T09:38:32.005Z",
+          "custom_data": null,
+          "description": "Podzito",
+          "import_meta": null,
+          "tax_category": "standard"
+        },
+        "quantity": 1,
+        "recurring": true,
+        "created_at": "2024-08-16T11:30:40.158Z",
+        "updated_at": "2024-08-16T11:30:40.158Z",
+        "trial_dates": null,
+        "next_billed_at": "2025-08-16T11:30:39.322644Z",
+        "previously_billed_at": "2024-08-16T11:30:39.322644Z"
+      }
+    ],
+    "status": "active",
+    "discount": null,
+    "paused_at": null,
+    "address_id": "add_01j5df7qcv1rdt3wkex75tbnjs",
+    "created_at": "2024-08-16T11:30:40.158Z",
+    "started_at": "2024-08-16T11:30:39.322644Z",
+    "updated_at": "2024-08-16T11:30:40.158Z",
+    "business_id": null,
+    "canceled_at": null,
+    "custom_data": null,
+    "customer_id": "ctm_01j535fawggst1gm3qsyanc0mb",
+    "import_meta": null,
+    "billing_cycle": {
+      "interval": "year",
+      "frequency": 1
+    },
+    "currency_code": "USD",
+    "next_billed_at": "2025-08-16T11:30:39.322644Z",
+    "transaction_id": "txn_01j5df7jcc1df14b11g5w044hs",
+    "billing_details": null,
+    "collection_mode": "automatic",
+    "first_billed_at": "2024-08-16T11:30:39.322644Z",
+    "scheduled_change": null,
+    "current_billing_period": {
+      "ends_at": "2025-08-16T11:30:39.322644Z",
+      "starts_at": "2024-08-16T11:30:39.322644Z"
+    }
+  }
+}
+
