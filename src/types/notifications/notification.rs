@@ -22,11 +22,12 @@
 
 use anyhow::Result;
 use derive_builder::Builder;
+use serde::Serialize;
 use serde_json::Value;
 
 use crate::notifications::helpers::types::EventName;
 
-#[derive(Debug, Builder, Clone)]
+#[derive(Debug, Builder, Clone, Serialize)]
 pub struct Notification {
   pub id: String,
   pub _type: EventName,
@@ -51,7 +52,7 @@ impl TryFrom<Value> for Notification {
   }
 }
 
-#[derive(Debug, Builder, Clone)]
+#[derive(Debug, Builder, Clone, Serialize)]
 pub struct NotificationResponse {
   pub data: Notification,
 }

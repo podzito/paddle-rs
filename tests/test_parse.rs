@@ -34,7 +34,9 @@ use serde_json::Value;
 fn test_sum(#[case] filename: &str) {
     use paddle::types::notifications::notification::NotificationResponse;
 
-  let notification_json = fs::read_to_string(format!("tests/data/notifications/{}", filename)).unwrap();
-  let notification: NotificationResponse = serde_json::from_str::<Value>(&notification_json).unwrap().try_into().unwrap();
-  println!("{:?} {:?}", notification_json, notification);
+  let event_json = fs::read_to_string(format!("tests/data/notifications/{}", filename)).unwrap();
+  let expected_value = fs::read_to_string(format!("tests/data/notifications/expected/{}", filename)).unwrap();
+  let notification: NotificationResponse = serde_json::from_str::<Value>(&event_json).unwrap().try_into().unwrap();
+
+  assert_eq!(serde_json::to_string_pretty(&notification).unwrap(), expected_value);
 }
