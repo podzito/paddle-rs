@@ -20,25 +20,4 @@
 // OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
 // SOFTWARE.
 
-use rstest::rstest;
-use serde_json::Value;
-use std::fs;
-
-#[rstest]
-#[case("subscription-annual-created.json")]
-fn test_sum(#[case] filename: &str) {
-    use paddle::model::notification::Notification;
-
-    let event_json = fs::read_to_string(format!("tests/data/notifications/{}", filename)).unwrap();
-    let expected_value =
-        fs::read_to_string(format!("tests/data/notifications/expected/{}", filename)).unwrap();
-    let notification: Notification = serde_json::from_str::<Value>(&event_json)
-        .unwrap()
-        .try_into()
-        .unwrap();
-
-    assert_eq!(
-        serde_json::to_string_pretty(&notification).unwrap(),
-        expected_value
-    );
-}
+pub mod serde;

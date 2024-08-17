@@ -20,5 +20,78 @@
 // OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
 // SOFTWARE.
 
-pub mod notifications;
-pub mod types;
+use anyhow::anyhow;
+use anyhow::Result;
+use serde_json::Map;
+use serde_json::Value;
+
+pub mod model;
+pub mod util;
+
+fn get_obj<'a>(obj: &'a Value, key: &str) -> Result<&'a Map<String, Value>> {
+    let value = obj
+        .get(key)
+        .ok_or(anyhow!(format!("Missing key: {}", key)))?;
+    value
+        .as_object()
+        .ok_or(anyhow!(format!("Expected object: {}", key)))
+}
+
+fn get_str(obj: &Value, key: &str) -> Result<String> {
+    Ok(obj
+        .get(key)
+        .ok_or(anyhow!(format!("Missing key: {}", key)))?
+        .as_str()
+        .ok_or(anyhow!(format!("Expected string: {}", key)))?
+        .to_string())
+}
+
+fn get_optional_str(obj: &Map<String, Value>, key: &str) -> Result<Option<String>> {
+    Ok(obj
+        .get(key)
+        .map(|v| {
+            v.as_str()
+                .ok_or(anyhow!(format!("Expected string: {}", key)))
+                .map(|v| v.to_string())
+                .ok()
+        })
+        .unwrap_or(None))
+}
+
+fn get_i64(obj: &Map<String, Value>, key: &str) -> Result<i64> {
+    Ok(obj
+        .get(key)
+        .ok_or(anyhow!(format!("Missing key: {}", key)))?
+        .as_i64()
+        .ok_or(anyhow!(format!("Expected i64: {}", key)))?)
+}
+
+fn get_optional_i64(obj: &Map<String, Value>, key: &str) -> Result<Option<i64>> {
+    Ok(obj
+        .get(key)
+        .map(|v| {
+            v.as_i64()
+                .ok_or(anyhow!(format!("Expected i64: {}", key)))
+                .ok()
+        })
+        .unwrap_or(None))
+}
+
+fn get_bool(obj: &Map<String, Value>, key: &str) -> Result<bool> {
+    Ok(obj
+        .get(key)
+        .ok_or(anyhow!(format!("Missing key: {}", key)))?
+        .as_bool()
+        .ok_or(anyhow!(format!("Expected bool: {}", key)))?)
+}
+
+fn get_optional_bool(obj: &Map<String, Value>, key: &str) -> Result<Option<bool>> {
+    Ok(obj
+        .get(key)
+        .map(|v| {
+            v.as_bool()
+                .ok_or(anyhow!(format!("Expected bool: {}", key)))
+                .ok()
+        })
+        .unwrap_or(None))
+}

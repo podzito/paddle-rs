@@ -20,25 +20,33 @@
 // OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
 // SOFTWARE.
 
-use rstest::rstest;
-use serde_json::Value;
-use std::fs;
+pub mod option_rfc3339 {
+    use serde::{self, Deserialize, Deserializer, Serializer};
+    use time::{format_description::well_known::Rfc3339, OffsetDateTime};
 
-#[rstest]
-#[case("subscription-annual-created.json")]
-fn test_sum(#[case] filename: &str) {
-    use paddle::model::notification::Notification;
+    pub fn serialize<S>(date: &Option<OffsetDateTime>, serializer: S) -> Result<S::Ok, S::Error>
+    where
+        S: Serializer,
+    {
+        match date {
+            Some(date) => {
+                let s = date.format(&Rfc3339).map_err(serde::ser::Error::custom)?;
+                serializer.serialize_some(&s)
+            }
+            None => serializer.serialize_none(),
+        }
+    }
 
-    let event_json = fs::read_to_string(format!("tests/data/notifications/{}", filename)).unwrap();
-    let expected_value =
-        fs::read_to_string(format!("tests/data/notifications/expected/{}", filename)).unwrap();
-    let notification: Notification = serde_json::from_str::<Value>(&event_json)
-        .unwrap()
-        .try_into()
-        .unwrap();
-
-    assert_eq!(
-        serde_json::to_string_pretty(&notification).unwrap(),
-        expected_value
-    );
+    pub fn deserialize<'de, D>(deserializer: D) -> Result<Option<OffsetDateTime>, D::Error>
+    where
+        D: Deserializer<'de>,
+    {
+        let opt = Option::<String>::deserialize(deserializer)?;
+        if let Some(s) = opt {
+            let date = OffsetDateTime::parse(&s, &Rfc3339).map_err(serde::de::Error::custom)?;
+            Ok(Some(date))
+        } else {
+            Ok(None)
+        }
+    }
 }

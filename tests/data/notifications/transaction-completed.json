@@ -1,13 +1,13 @@
 {
   "data": {
-    "address_id": "add_01j5deqw2gxb9sjjyaafpsb1gv",
-    "billed_at": "2024-08-16T11:21:55.413735Z",
+    "address_id": "add_01j5g2nvcrec9av2mewb1q0k62",
+    "billed_at": "2024-08-17T11:48:59.800556Z",
     "billing_details": null,
-    "billing_period": { "ends_at": "2024-08-23T11:21:55.727Z", "starts_at": "2024-08-16T11:21:55.727Z" },
+    "billing_period": { "ends_at": "2024-08-24T11:49:00.129Z", "starts_at": "2024-08-17T11:49:00.129Z" },
     "business_id": null,
-    "checkout": { "url": "https://www.podzito.com?_ptxn=txn_01j5deqr3fpdac9n6qm2xez5ch" },
+    "checkout": { "url": "https://www.podzito.com?_ptxn=txn_01j5g2nqc36pyfk7rhymdfw10j" },
     "collection_mode": "automatic",
-    "created_at": "2024-08-16T11:21:33.638619Z",
+    "created_at": "2024-08-17T11:48:27.727893Z",
     "currency_code": "USD",
     "custom_data": null,
     "customer_id": "ctm_01j535fawggst1gm3qsyanc0mb",
@@ -23,9 +23,9 @@
       },
       "line_items": [
         {
-          "id": "txnitm_01j5deqwcph4y4r67pa0a1hxhv",
+          "id": "txnitm_01j5g2nvqzsv8wkr0atgd3we6x",
           "item_id": null,
-          "price_id": "pri_01j52zfss0hcfxamnma1tf42gt",
+          "price_id": "pri_01j52zjbkt405xwe2hdx1rpz00",
           "product": {
             "created_at": "2024-08-12T09:38:32.005Z",
             "custom_data": null,
@@ -77,17 +77,17 @@
       }
     },
     "discount_id": null,
-    "id": "txn_01j5deqr3fpdac9n6qm2xez5ch",
+    "id": "txn_01j5g2nqc36pyfk7rhymdfw10j",
     "invoice_id": null,
     "invoice_number": null,
     "items": [
       {
         "price": {
-          "billing_cycle": { "frequency": 1, "interval": "month" },
-          "created_at": "2024-08-12T09:42:40.160401Z",
+          "billing_cycle": { "frequency": 1, "interval": "year" },
+          "created_at": "2024-08-12T09:44:03.962458Z",
           "custom_data": { "credits": "25", "storage": "5000" },
-          "description": "PodZito Pro - Monthlu",
-          "id": "pri_01j52zfss0hcfxamnma1tf42gt",
+          "description": "PodZito Pro - Annual",
+          "id": "pri_01j52zjbkt405xwe2hdx1rpz00",
           "name": "PodZito Pro",
           "product_id": "pro_01j52z87e5sdt3p60mmtcavpgt",
           "quantity": { "maximum": 1, "minimum": 1 },
@@ -95,11 +95,11 @@
           "tax_mode": "account_setting",
           "trial_period": { "frequency": 7, "interval": "day" },
           "type": "standard",
-          "unit_price": { "amount": "2499", "currency_code": "USD" },
+          "unit_price": { "amount": "19999", "currency_code": "USD" },
           "unit_price_overrides": [],
-          "updated_at": "2024-08-13T17:52:09.561748Z"
+          "updated_at": "2024-08-13T17:52:27.702555Z"
         },
-        "price_id": "pri_01j52zfss0hcfxamnma1tf42gt",
+        "price_id": "pri_01j52zjbkt405xwe2hdx1rpz00",
         "proration": null,
         "quantity": 1
       }
@@ -109,26 +109,25 @@
       {
         "amount": "0",
         "captured_at": null,
-        "created_at": "2024-08-16T11:21:53.319173Z",
+        "created_at": "2024-08-17T11:48:58.057346Z",
         "error_code": null,
         "method_details": {
-          "card": { "cardholder_name": "AM", "expiry_month": 9, "expiry_year": 2029, "last4": "5556", "type": "visa" },
+          "card": { "cardholder_name": "AA", "expiry_month": 9, "expiry_year": 2029, "last4": "5556", "type": "visa" },
           "type": "card"
         },
-        "payment_attempt_id": "1a0ff7df-8d4d-4d39-8d87-30da9241c7ff",
-        "payment_method_id": "paymtd_01j5derbcksjq5hqdrmxvv8pvt",
+        "payment_attempt_id": "16bdeef5-84b4-45fd-adc5-819b803ae50e",
+        "payment_method_id": "paymtd_01j5g2pn1j3a80jrpb358tbwxs",
         "status": "authorized",
-        "stored_payment_method_id": "f20525c8-c472-4a58-be09-fbbad6611286"
+        "stored_payment_method_id": "12e36acd-a890-42e2-8054-a5bb3721b52f"
       }
     ],
     "receipt_data": null,
     "status": "completed",
-    "subscription_id": "sub_01j5derdrma035t1kjbzxp9cwa",
-    "updated_at": "2024-08-16T11:21:56.31542366Z"
+    "subscription_id": "sub_01j5g2pq3cwtx43fd2h40c67e9",
+    "updated_at": "2024-08-17T11:49:01.122433645Z"
   },
-  "event_id": "evt_01j5derer6x0b75024w9z8yjqn",
+  "event_id": "evt_01j5g2prpnqg16txtvn4beqnap",
   "event_type": "transaction.completed",
-  "notification_id": "ntf_01j5derezat2tt64aswa9n99wr",
-  "occurred_at": "2024-08-16T11:21:56.742990Z"
+  "notification_id": "ntf_01j5g2psa1zp1z7amd7pceg4pg",
+  "occurred_at": "2024-08-17T11:49:01.781673Z"
 }
-
