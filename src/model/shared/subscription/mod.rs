@@ -20,5 +20,49 @@
 // OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
 // SOFTWARE.
 
-pub mod notification;
-pub mod shared;
+use serde::{Deserialize, Serialize};
+
+#[derive(Debug, PartialEq, Clone, Serialize, Deserialize)]
+pub enum SubscriptionStatus {
+    #[serde(rename = "trialing")]
+    Trialing,
+
+    #[serde(rename = "active")]
+    Active,
+
+    #[serde(rename = "past_due")]
+    PastDue,
+
+    #[serde(rename = "canceled")]
+    Canceled,
+
+    #[serde(rename = "unpaid")]
+    Unpaid,
+}
+
+#[derive(Debug, PartialEq, Clone, Serialize, Deserialize)]
+pub enum BillingInterval {
+    #[serde(rename = "month")]
+    Monthly,
+
+    #[serde(rename = "year")]
+    Yearly,
+
+    #[serde(rename = "week")]
+    Weekly,
+
+    #[serde(rename = "day")]
+    Day,
+}
+
+#[derive(Debug, PartialEq, Clone, Serialize, Deserialize)]
+pub struct BillingCycle {
+    frequency: u32,
+    interval: BillingInterval,
+}
+
+#[derive(Debug, PartialEq, Clone, Serialize, Deserialize)]
+pub struct Quantity {
+    maximum: u32,
+    minimum: u32,
+}

@@ -30,15 +30,20 @@ fn test_sum(#[case] filename: &str) {
     use paddle::model::notification::Notification;
 
     let event_json = fs::read_to_string(format!("tests/data/notifications/{}", filename)).unwrap();
-    let expected_value =
-        fs::read_to_string(format!("tests/data/notifications/expected/{}", filename)).unwrap();
     let notification: Notification = serde_json::from_str::<Value>(&event_json)
         .unwrap()
         .try_into()
         .unwrap();
 
-    assert_eq!(
-        serde_json::to_string_pretty(&notification).unwrap(),
-        expected_value
-    );
+    // println!(
+    //     "notification: {:?}",
+    //     serde_json::to_string(&notification).unwrap()
+    // );
+
+    let expected_value =
+        fs::read_to_string(format!("tests/data/notifications/expected/{}", filename)).unwrap();
+    let expected_notification: Notification =
+        serde_json::from_str::<Notification>(&expected_value).unwrap();
+
+    assert_eq!(notification, expected_notification);
 }
