@@ -24,24 +24,24 @@ use serde::{Deserialize, Serialize};
 
 #[derive(Debug, PartialEq, Clone, Serialize, Deserialize)]
 pub enum SubscriptionStatus {
-    #[serde(rename = "trialing")]
-    Trialing,
-
     #[serde(rename = "active")]
     Active,
-
-    #[serde(rename = "past_due")]
-    PastDue,
 
     #[serde(rename = "canceled")]
     Canceled,
 
-    #[serde(rename = "unpaid")]
-    Unpaid,
+    #[serde(rename = "past_due")]
+    PastDue,
+
+    #[serde(rename = "paused")]
+    Paused,
+
+    #[serde(rename = "trialing")]
+    Trialing,
 }
 
 #[derive(Debug, PartialEq, Clone, Serialize, Deserialize)]
-pub enum BillingInterval {
+pub enum Interval {
     #[serde(rename = "month")]
     Monthly,
 
@@ -58,7 +58,7 @@ pub enum BillingInterval {
 #[derive(Debug, PartialEq, Clone, Serialize, Deserialize)]
 pub struct BillingCycle {
     frequency: u32,
-    interval: BillingInterval,
+    interval: Interval,
 }
 
 #[derive(Debug, PartialEq, Clone, Serialize, Deserialize)]

@@ -25,7 +25,7 @@ use std::collections::HashMap;
 use serde::{Deserialize, Serialize};
 use time::OffsetDateTime;
 
-use crate::model::shared::subscription::{BillingCycle, BillingInterval, Quantity};
+use crate::model::shared::subscription::{BillingCycle, Interval, Quantity};
 
 #[derive(Debug, PartialEq, Clone, Serialize, Deserialize)]
 pub enum Currency {
@@ -53,7 +53,7 @@ pub enum TaxMode {
 #[derive(Debug, PartialEq, Clone, Serialize, Deserialize)]
 pub struct TrialPeriod {
     frequency: u32,
-    interval: BillingInterval,
+    interval: Interval,
 }
 
 #[derive(Debug, PartialEq, Clone, Serialize, Deserialize)]

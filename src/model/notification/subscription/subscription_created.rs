@@ -31,8 +31,8 @@ use crate::model::shared::{
 #[derive(Debug, PartialEq, Clone, Serialize, Deserialize)]
 pub struct SubscriptionCreated {
     pub billing_cycle: BillingCycle,
-    #[serde(with = "time::serde::rfc3339")]
-    pub next_billed_at: OffsetDateTime,
+    #[serde(with = "crate::util::serde::option_rfc3339")]
+    pub next_billed_at: Option<OffsetDateTime>,
     #[serde(with = "crate::util::serde::option_rfc3339")]
     pub paused_at: Option<OffsetDateTime>,
     #[serde(with = "crate::util::serde::option_rfc3339")]

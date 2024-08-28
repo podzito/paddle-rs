@@ -26,6 +26,11 @@ use std::fs;
 
 #[rstest]
 #[case("subscription-annual-created.json")]
+#[case("subscription-monthly-created.json")]
+#[case("subscription-canceled.json")]
+#[case("subscription-paused.json")]
+#[case("subscription-resumed.json")]
+#[case("subscription-updated.json")]
 fn test_sum(#[case] filename: &str) {
     use paddle::model::notification::Notification;
 
@@ -35,10 +40,10 @@ fn test_sum(#[case] filename: &str) {
         .try_into()
         .unwrap();
 
-    // println!(
-    //     "notification: {:?}",
-    //     serde_json::to_string(&notification).unwrap()
-    // );
+    println!(
+        "notification: {:?}",
+        serde_json::to_string(&notification).unwrap()
+    );
 
     let expected_value =
         fs::read_to_string(format!("tests/data/notifications/expected/{}", filename)).unwrap();

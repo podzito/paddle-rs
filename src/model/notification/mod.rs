@@ -28,7 +28,10 @@ use time::{format_description::well_known::Rfc3339, OffsetDateTime};
 
 use crate::get_str;
 
-use self::subscription::subscription_created::SubscriptionCreated;
+use self::subscription::{
+    subscription_canceled::SubscriptionCanceled, subscription_created::SubscriptionCreated,
+    subscription_updated::SubscriptionUpdated,
+};
 
 pub mod subscription;
 
@@ -50,9 +53,7 @@ impl TryFrom<Value> for Notification {
         let occurred_at: OffsetDateTime =
             OffsetDateTime::parse(&get_str(&value, "occurred_at")?, &Rfc3339)?;
 
-        println!("Parsing event");
         let event = value.try_into()?;
-        println!("After event: {:?}", event);
 
         let notification = NotificationBuilder::default()
             .event_id(event_id)
@@ -68,6 +69,8 @@ impl TryFrom<Value> for Notification {
 #[derive(Debug, PartialEq, Clone, Serialize, Deserialize)]
 pub enum Event {
     SubscriptionCreated(SubscriptionCreated),
+    SubscriptionCanceled(SubscriptionCanceled),
+    SubscriptionUpdated(SubscriptionUpdated),
 }
 
 impl TryFrom<Value> for Event {
@@ -78,9 +81,14 @@ impl TryFrom<Value> for Event {
         let data = value.get("data").ok_or(anyhow!("Missing data"))?;
 
         if event_type == "subscription.created" {
-            println!("Parsing subscription created: {:?}", data);
             let subscription_created = serde_json::from_value(data.clone())?;
             Ok(Event::SubscriptionCreated(subscription_created))
+        } else if event_type == "subscription.canceled" {
+            let subscription_canceled = serde_json::from_value(data.clone())?;
+            Ok(Event::SubscriptionCanceled(subscription_canceled))
+        } else if event_type == "subscription.updated" {
+            let subscription_updated = serde_json::from_value(data.clone())?;
+            Ok(Event::SubscriptionUpdated(subscription_updated))
         } else {
             Err(anyhow!("Unknown event type: {}", event_type))
         }

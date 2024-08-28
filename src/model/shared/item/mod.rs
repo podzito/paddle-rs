@@ -59,8 +59,8 @@ pub struct Item {
     pub product: Product,
     #[serde(with = "time::serde::rfc3339")]
     pub created_at: OffsetDateTime,
-    #[serde(with = "time::serde::rfc3339")]
-    pub next_billed_at: OffsetDateTime,
+    #[serde(with = "crate::util::serde::option_rfc3339")]
+    pub next_billed_at: Option<OffsetDateTime>,
     #[serde(with = "crate::util::serde::option_rfc3339")]
     pub previously_billed_at: Option<OffsetDateTime>,
     pub quantity: u32,

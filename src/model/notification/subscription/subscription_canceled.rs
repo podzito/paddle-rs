@@ -20,6 +20,27 @@
 // OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
 // SOFTWARE.
 
-pub mod subscription_canceled;
-pub mod subscription_created;
-pub mod subscription_updated;
+use serde::{Deserialize, Serialize};
+use time::OffsetDateTime;
+
+use crate::model::shared::{
+    item::Item,
+    subscription::{BillingCycle, SubscriptionStatus},
+};
+
+#[derive(Debug, PartialEq, Clone, Serialize, Deserialize)]
+pub struct SubscriptionCanceled {
+    pub billing_cycle: BillingCycle,
+    #[serde(with = "crate::util::serde::option_rfc3339")]
+    pub next_billed_at: Option<OffsetDateTime>,
+    #[serde(with = "crate::util::serde::option_rfc3339")]
+    pub paused_at: Option<OffsetDateTime>,
+    #[serde(with = "crate::util::serde::option_rfc3339")]
+    pub scheduled_change: Option<OffsetDateTime>,
+    #[serde(with = "time::serde::rfc3339")]
+    pub started_at: OffsetDateTime,
+    pub items: Vec<Item>,
+    pub status: SubscriptionStatus,
+    #[serde(with = "time::serde::rfc3339")]
+    pub updated_at: OffsetDateTime,
+}
