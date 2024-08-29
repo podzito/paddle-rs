@@ -33,7 +33,10 @@ use self::subscription::{
     subscription_updated::SubscriptionUpdated,
 };
 
+use self::transaction::transaction_completed::TransactionCompleted;
+
 pub mod subscription;
+pub mod transaction;
 
 #[derive(Debug, Builder, Clone, PartialEq, Serialize, Deserialize)]
 pub struct Notification {
@@ -71,6 +74,7 @@ pub enum Event {
     SubscriptionCreated(SubscriptionCreated),
     SubscriptionCanceled(SubscriptionCanceled),
     SubscriptionUpdated(SubscriptionUpdated),
+    TransactionCompleted(TransactionCompleted),
 }
 
 impl TryFrom<Value> for Event {
@@ -89,6 +93,9 @@ impl TryFrom<Value> for Event {
         } else if event_type == "subscription.updated" {
             let subscription_updated = serde_json::from_value(data.clone())?;
             Ok(Event::SubscriptionUpdated(subscription_updated))
+        } else if event_type == "transaction.completed" {
+            let transaction_completed = serde_json::from_value(data.clone())?;
+            Ok(Event::TransactionCompleted(transaction_completed))
         } else {
             Err(anyhow!("Unknown event type: {}", event_type))
         }

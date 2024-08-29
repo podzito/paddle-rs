@@ -1,0 +1,8 @@
+{
+  "event_id": "evt_01j5g2prpnqg16txtvn4beqnap",
+  "notification_id": "ntf_01j5g2psa1zp1z7amd7pceg4pg",
+  "event": {
+    "TransactionCompleted": { "id": "txn_01j5g2nqc36pyfk7rhymdfw10j", "customer_id": "ctm_01j535fawggst1gm3qsyanc0mb" }
+  },
+  "occurred_at": "2024-08-17T11:49:01.781673Z"
+}
