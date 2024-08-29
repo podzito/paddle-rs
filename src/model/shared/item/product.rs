@@ -52,7 +52,6 @@ pub struct Product {
     pub id: String,
     pub image_url: Option<String>,
     pub name: String,
-    pub seller_id: String,
     pub status: Status,
     pub tax_category: TaxCategory,
     #[serde(rename = "type")]

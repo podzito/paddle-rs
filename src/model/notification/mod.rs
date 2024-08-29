@@ -22,7 +22,7 @@
 
 use anyhow::{anyhow, Result};
 use derive_builder::Builder;
-use serde::{Deserialize, Serialize};
+use serde::{Deserialize, Deserializer, Serialize};
 use serde_json::Value;
 use time::{format_description::well_known::Rfc3339, OffsetDateTime};
 
@@ -38,7 +38,7 @@ use self::transaction::transaction_completed::TransactionCompleted;
 pub mod subscription;
 pub mod transaction;
 
-#[derive(Debug, Builder, Clone, PartialEq, Serialize, Deserialize)]
+#[derive(Debug, Builder, Clone, PartialEq, Serialize)]
 pub struct Notification {
     pub event_id: String,
     pub notification_id: String,
@@ -47,16 +47,29 @@ pub struct Notification {
     pub occurred_at: OffsetDateTime,
 }
 
+impl<'de> Deserialize<'de> for Notification {
+    fn deserialize<D>(deserializer: D) -> Result<Self, D::Error>
+    where
+        D: Deserializer<'de>,
+    {
+        let value = Value::deserialize(deserializer)?;
+        Notification::try_from(value).map_err(serde::de::Error::custom)
+    }
+}
+
 impl TryFrom<Value> for Notification {
     type Error = anyhow::Error;
 
     fn try_from(value: Value) -> Result<Self> {
-        let event_id = get_str(&value, "event_id")?;
-        let notification_id = get_str(&value, "notification_id")?;
-        let occurred_at: OffsetDateTime =
-            OffsetDateTime::parse(&get_str(&value, "occurred_at")?, &Rfc3339)?;
+        let data = value.get("data").ok_or(anyhow!("Missing data"))?;
+        let payload = data.get("payload").ok_or(anyhow!("Missing payload"))?;
 
-        let event = value.try_into()?;
+        let event_id = get_str(payload, "event_id")?;
+        let notification_id = get_str(payload, "notification_id")?;
+        let occurred_at: OffsetDateTime =
+            OffsetDateTime::parse(&get_str(payload, "occurred_at")?, &Rfc3339)?;
+
+        let event = payload.clone().try_into()?;
 
         let notification = NotificationBuilder::default()
             .event_id(event_id)

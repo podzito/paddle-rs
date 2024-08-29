@@ -1,32 +1,31 @@
 {
-  "event_id": "evt_01j6c1axdzfvz9nc64qafqbfgf",
-  "notification_id": "ntf_01j6c1axh39t2jk4y31rjc8wad",
+  "event_id": "evt_01j6ffeybs8663frsz3240kjch",
+  "notification_id": "ntf_01j6ffeyg71gse6bm6fp8pvacr",
   "event": {
-    "SubscriptionCanceled": {
-      "billing_cycle": { "frequency": 1, "interval": "month" },
-      "next_billed_at": null,
+    "SubscriptionCreated": {
+      "billing_cycle": { "frequency": 1, "interval": "year" },
+      "next_billed_at": "2025-08-29T16:28:22.856323Z",
       "paused_at": null,
       "scheduled_change": null,
-      "started_at": "2024-08-28T08:19:48.806Z",
+      "started_at": "2024-08-29T16:28:22.856323Z",
       "items": [
         {
           "price": {
-            "billing_cycle": { "frequency": 1, "interval": "month" },
-            "created_at": "2024-08-12T09:42:40.160401Z",
-            "custom_data": { "credits": "25", "storage": "5000" },
-            "description": "PodZito Pro - Monthlu",
-            "id": "pri_01j52zfss0hcfxamnma1tf42gt",
+            "billing_cycle": { "frequency": 1, "interval": "year" },
+            "created_at": "2024-08-29T11:38:23.207406Z",
+            "custom_data": null,
+            "description": "PodZito Pro Plus",
+            "id": "pri_01j6eyvx3707phydse7hf79ksp",
             "import_meta": null,
-            "name": "PodZito Pro",
+            "name": "PodZito Pro Plus",
             "product_id": "pro_01j52z87e5sdt3p60mmtcavpgt",
             "quantity": { "maximum": 1, "minimum": 1 },
-            "seller_id": "21860",
             "status": "active",
             "tax_mode": "account_setting",
-            "trial_period": { "frequency": 7, "interval": "day" },
+            "trial_period": null,
             "type": "standard",
-            "unit_price": { "amount": "2499", "currency_code": "USD" },
-            "updated_at": "2024-08-13T17:52:09.561748Z"
+            "unit_price": { "amount": "12999", "currency_code": "USD" },
+            "updated_at": "2024-08-29T11:38:23.207406Z"
           },
           "product": {
             "created_at": "2024-08-12T09:38:32.005Z",
@@ -35,26 +34,26 @@
             "id": "pro_01j52z87e5sdt3p60mmtcavpgt",
             "image_url": null,
             "name": "PodZito",
-            "seller_id": "21860",
             "status": "active",
             "tax_category": "standard",
             "type": "standard",
             "updated_at": "2024-08-12T09:38:32.005Z"
           },
-          "created_at": "2024-08-28T08:19:48.812Z",
-          "next_billed_at": null,
-          "previously_billed_at": "2024-08-28T08:22:55.095Z",
+          "created_at": "2024-08-29T16:28:23.824Z",
+          "next_billed_at": "2025-08-29T16:28:22.856323Z",
+          "previously_billed_at": "2024-08-29T16:28:22.856323Z",
           "quantity": 1,
           "recurring": true,
           "status": "active",
-          "trial_dates": { "starts_at": "2024-08-28T08:19:48.806Z", "ends_at": "2024-08-28T08:22:06.533Z" },
-          "updated_at": "2024-08-28T08:22:55.126Z"
+          "trial_dates": null,
+          "updated_at": "2024-08-29T16:28:23.824Z"
         }
       ],
-      "status": "canceled",
-      "updated_at": "2024-08-28T08:23:48.366Z"
+      "status": "active",
+      "transaction_id": "txn_01j6ffdrbabr6a8zyrdsjz28ev",
+      "updated_at": "2024-08-29T16:28:23.824Z"
     }
   },
-  "occurred_at": "2024-08-28T08:23:48.927778Z"
+  "occurred_at": "2024-08-29T16:28:24.313864Z"
 }
 

@@ -66,7 +66,7 @@ pub struct Item {
     pub quantity: u32,
     pub recurring: bool,
     pub status: Status,
-    pub trial_dates: TrialDates,
+    pub trial_dates: Option<TrialDates>,
     #[serde(with = "time::serde::rfc3339")]
     pub updated_at: OffsetDateTime,
 }

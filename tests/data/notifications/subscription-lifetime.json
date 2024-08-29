@@ -1,31 +1,31 @@
 {
   "data": {
-    "id": "ntf_01j6feh8zxj4wm33tm5tzcbj9v",
+    "id": "ntf_01j6ffntraahbc78qjaqpvta49",
     "type": "transaction.completed",
     "status": "not_attempted",
     "payload": {
       "data": {
-        "id": "txn_01j6feg1rewxx4742qrnkd1f97",
+        "id": "txn_01j6ffmn625kgf1qj2rec51mjy",
         "items": [
           {
             "price": {
-              "id": "pri_01j52zfss0hcfxamnma1tf42gt",
-              "name": "PodZito Pro",
+              "id": "pri_01j6eys6jwj3msa87b7nknd6jc",
+              "name": "PodZito Pro - Lifetime",
               "type": "standard",
               "status": "active",
               "quantity": { "maximum": 1, "minimum": 1 },
               "tax_mode": "account_setting",
-              "created_at": "2024-08-12T09:42:40.160401Z",
+              "created_at": "2024-08-29T11:36:54.620513Z",
               "product_id": "pro_01j52z87e5sdt3p60mmtcavpgt",
-              "unit_price": { "amount": "999", "currency_code": "USD" },
-              "updated_at": "2024-08-29T11:35:06.922573Z",
+              "unit_price": { "amount": "19900", "currency_code": "USD" },
+              "updated_at": "2024-08-29T11:36:54.620513Z",
               "custom_data": null,
-              "description": "PodZito Pro - Monthly",
-              "trial_period": { "interval": "day", "frequency": 7 },
-              "billing_cycle": { "interval": "month", "frequency": 1 },
+              "description": "PodZito Pro - Lifetime",
+              "trial_period": null,
+              "billing_cycle": null,
               "unit_price_overrides": []
             },
-            "price_id": "pri_01j52zfss0hcfxamnma1tf42gt",
+            "price_id": "pri_01j6eys6jwj3msa87b7nknd6jc",
             "quantity": 1,
             "proration": null
           }
@@ -34,22 +34,22 @@
         "status": "completed",
         "details": {
           "totals": {
-            "fee": "0",
-            "tax": "0",
-            "total": "0",
+            "fee": "1045",
+            "tax": "3317",
+            "total": "19900",
             "credit": "0",
             "balance": "0",
             "discount": "0",
-            "earnings": "0",
-            "subtotal": "0",
-            "grand_total": "0",
+            "earnings": "15538",
+            "subtotal": "16583",
+            "grand_total": "19900",
             "currency_code": "USD",
             "credit_to_balance": "0"
           },
           "line_items": [
             {
-              "id": "txnitm_01j6fegee14w1w77jmswdw6a7h",
-              "totals": { "tax": "0", "total": "0", "discount": "0", "subtotal": "0" },
+              "id": "txnitm_01j6ffmyez4rs05tevrbm8dmjw",
+              "totals": { "tax": "3317", "total": "19900", "discount": "0", "subtotal": "16583" },
               "item_id": null,
               "product": {
                 "id": "pro_01j52z87e5sdt3p60mmtcavpgt",
@@ -63,48 +63,48 @@
                 "description": "Podzito",
                 "tax_category": "standard"
               },
-              "price_id": "pri_01j52zfss0hcfxamnma1tf42gt",
+              "price_id": "pri_01j6eys6jwj3msa87b7nknd6jc",
               "quantity": 1,
               "tax_rate": "0.2",
-              "unit_totals": { "tax": "0", "total": "0", "discount": "0", "subtotal": "0" }
+              "unit_totals": { "tax": "3317", "total": "19900", "discount": "0", "subtotal": "16583" }
             }
           ],
           "payout_totals": {
-            "fee": "0",
-            "tax": "0",
-            "total": "0",
+            "fee": "1045",
+            "tax": "3317",
+            "total": "19900",
             "credit": "0",
             "balance": "0",
             "discount": "0",
-            "earnings": "0",
-            "fee_rate": "0",
-            "subtotal": "0",
-            "grand_total": "0",
+            "earnings": "15538",
+            "fee_rate": "0.05",
+            "subtotal": "16583",
+            "grand_total": "19900",
             "currency_code": "USD",
             "exchange_rate": "1",
             "credit_to_balance": "0"
           },
           "tax_rates_used": [
-            { "totals": { "tax": "0", "total": "0", "discount": "0", "subtotal": "0" }, "tax_rate": "0.2" }
+            { "totals": { "tax": "3317", "total": "19900", "discount": "0", "subtotal": "16583" }, "tax_rate": "0.2" }
           ],
           "adjusted_totals": {
-            "fee": "0",
-            "tax": "0",
-            "total": "0",
-            "earnings": "0",
-            "subtotal": "0",
-            "grand_total": "0",
+            "fee": "1045",
+            "tax": "3317",
+            "total": "19900",
+            "earnings": "15538",
+            "subtotal": "16583",
+            "grand_total": "19900",
             "currency_code": "USD"
           }
         },
-        "checkout": { "url": "https://www.podzito.com?_ptxn=txn_01j6feg1rewxx4742qrnkd1f97" },
+        "checkout": { "url": "https://www.podzito.com?_ptxn=txn_01j6ffmn625kgf1qj2rec51mjy" },
         "payments": [
           {
-            "amount": "0",
-            "status": "authorized",
-            "created_at": "2024-08-29T16:12:08.800275Z",
+            "amount": "19900",
+            "status": "captured",
+            "created_at": "2024-08-29T16:32:06.14845Z",
             "error_code": null,
-            "captured_at": null,
+            "captured_at": "2024-08-29T16:32:08.170941Z",
             "method_details": {
               "card": {
                 "type": "visa",
@@ -115,34 +115,34 @@
               },
               "type": "card"
             },
-            "payment_method_id": "paymtd_01j6feh5pexyqx375c6w05096m",
-            "payment_attempt_id": "8ec324cd-0ab0-4afd-a41b-4ec33cfaab5c",
-            "stored_payment_method_id": "ab788bff-a489-484b-a563-adbfefe8e8ac"
+            "payment_method_id": "paymtd_01j6ffnpzkq7sfzayktbwq44v9",
+            "payment_attempt_id": "77fb0f2c-5e4f-47d9-9bf5-92b51afabf98",
+            "stored_payment_method_id": "b96e1131-a9dd-43ce-b186-5406f688fe6a"
           }
         ],
-        "billed_at": "2024-08-29T16:12:10.595167Z",
-        "address_id": "add_01j6fege3re5yv00dgrcfs1y6e",
-        "created_at": "2024-08-29T16:11:32.068945Z",
-        "invoice_id": null,
-        "updated_at": "2024-08-29T16:12:11.521858272Z",
+        "billed_at": "2024-08-29T16:32:08.561157Z",
+        "address_id": "add_01j6ffmy5yggg1vxtr7cwj5439",
+        "created_at": "2024-08-29T16:31:31.612753Z",
+        "invoice_id": "inv_01j6ffnsqp61r845d8s30d5nqh",
+        "updated_at": "2024-08-29T16:32:09.431647461Z",
         "business_id": null,
         "custom_data": null,
         "customer_id": "ctm_01j535fawggst1gm3qsyanc0mb",
         "discount_id": null,
         "receipt_data": null,
         "currency_code": "USD",
-        "billing_period": { "ends_at": "2024-09-05T16:12:10.967Z", "starts_at": "2024-08-29T16:12:10.967Z" },
-        "invoice_number": null,
+        "billing_period": null,
+        "invoice_number": "8326-10027",
         "billing_details": null,
         "collection_mode": "automatic",
-        "subscription_id": "sub_01j6feh7txspm3a0y0eyhgrs23"
+        "subscription_id": null
       },
-      "event_id": "evt_01j6feh8wcpps3nmvdcv5q7rw3",
+      "event_id": "evt_01j6ffntn1m7vt4jpttvcm8y62",
       "event_type": "transaction.completed",
-      "occurred_at": "2024-08-29T16:12:12.044189Z",
-      "notification_id": "ntf_01j6feh8zxj4wm33tm5tzcbj9v"
+      "occurred_at": "2024-08-29T16:32:09.889866Z",
+      "notification_id": "ntf_01j6ffntraahbc78qjaqpvta49"
     },
-    "occurred_at": "2024-08-29T16:12:12.044189Z",
+    "occurred_at": "2024-08-29T16:32:09.889866Z",
     "delivered_at": null,
     "replayed_at": null,
     "origin": "event",
@@ -151,6 +151,6 @@
     "times_attempted": 0,
     "notification_setting_id": "ntfset_01j5akfpdszj2r2prnsjbf0ytt"
   },
-  "meta": { "request_id": "48f279bc-94a6-4964-afe3-48b792fef0c4" }
+  "meta": { "request_id": "78a540bb-128e-4549-9a6a-0fa53fcce0d2" }
 }
 

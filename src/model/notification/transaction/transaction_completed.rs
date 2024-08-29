@@ -22,8 +22,11 @@
 
 use serde::{Deserialize, Serialize};
 
+use crate::model::shared::item::Item;
+
 #[derive(Debug, PartialEq, Clone, Serialize, Deserialize)]
 pub struct TransactionCompleted {
     pub id: String,
     pub customer_id: String,
+    pub items: Vec<Item>,
 }

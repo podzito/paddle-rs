@@ -52,8 +52,8 @@ pub enum TaxMode {
 
 #[derive(Debug, PartialEq, Clone, Serialize, Deserialize)]
 pub struct TrialPeriod {
-    frequency: u32,
-    interval: Interval,
+    pub frequency: u32,
+    pub interval: Interval,
 }
 
 #[derive(Debug, PartialEq, Clone, Serialize, Deserialize)]
@@ -74,10 +74,9 @@ pub struct Price {
     pub name: String,
     pub product_id: String,
     pub quantity: Quantity,
-    pub seller_id: String,
     pub status: Status,
     pub tax_mode: TaxMode,
-    pub trial_period: TrialPeriod,
+    pub trial_period: Option<TrialPeriod>,
     #[serde(rename = "type")]
     pub _type: ItemType,
     pub unit_price: ItemPrice,
