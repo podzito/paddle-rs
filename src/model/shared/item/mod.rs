@@ -56,17 +56,18 @@ pub struct TrialDates {
 
 pub struct Item {
     pub price: Price,
-    pub product: Product,
-    #[serde(with = "time::serde::rfc3339")]
-    pub created_at: OffsetDateTime,
-    #[serde(with = "crate::util::serde::option_rfc3339")]
+    pub product: Option<Product>,
+    #[serde(default, with = "crate::util::serde::option_rfc3339")]
+    pub created_at: Option<OffsetDateTime>,
+    #[serde(default, with = "crate::util::serde::option_rfc3339")]
     pub next_billed_at: Option<OffsetDateTime>,
-    #[serde(with = "crate::util::serde::option_rfc3339")]
+    #[serde(default, with = "crate::util::serde::option_rfc3339")]
     pub previously_billed_at: Option<OffsetDateTime>,
-    pub quantity: u32,
-    pub recurring: bool,
-    pub status: Status,
+    pub price_id: Option<String>,
+    pub quantity: Option<u32>,
+    pub recurring: Option<bool>,
+    pub status: Option<Status>,
     pub trial_dates: Option<TrialDates>,
-    #[serde(with = "time::serde::rfc3339")]
-    pub updated_at: OffsetDateTime,
+    #[serde(default, with = "crate::util::serde::option_rfc3339")]
+    pub updated_at: Option<OffsetDateTime>,
 }

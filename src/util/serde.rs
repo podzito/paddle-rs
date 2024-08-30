@@ -41,7 +41,7 @@ pub mod option_rfc3339 {
     where
         D: Deserializer<'de>,
     {
-        let opt = Option::<String>::deserialize(deserializer)?;
+        let opt = Option::<String>::deserialize(deserializer).ok().flatten();
         if let Some(s) = opt {
             let date = OffsetDateTime::parse(&s, &Rfc3339).map_err(serde::de::Error::custom)?;
             Ok(Some(date))

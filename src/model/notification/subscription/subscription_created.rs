@@ -20,6 +20,8 @@
 // OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
 // SOFTWARE.
 
+use std::collections::HashMap;
+
 use serde::{Deserialize, Serialize};
 use time::OffsetDateTime;
 
@@ -39,6 +41,7 @@ pub struct SubscriptionCreated {
     pub scheduled_change: Option<OffsetDateTime>,
     #[serde(with = "time::serde::rfc3339")]
     pub started_at: OffsetDateTime,
+    pub custom_data: Option<HashMap<String, String>>,
     pub items: Vec<Item>,
     pub status: SubscriptionStatus,
     pub transaction_id: String,

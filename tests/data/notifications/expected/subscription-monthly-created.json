@@ -1,13 +1,14 @@
 {
-  "event_id": "evt_01j6feh8ct68zsc90a6jmc7wp2",
-  "notification_id": "ntf_01j6feh8tgcbetdhsnh0v6jx5k",
+  "event_id": "evt_01j6h8vb276se6a1hyys6t9fdn",
+  "notification_id": "ntf_01j6h8vbfx1wryhg65nxh43b4m",
   "event": {
     "SubscriptionCreated": {
       "billing_cycle": { "frequency": 1, "interval": "month" },
-      "next_billed_at": "2024-09-05T16:12:10.967Z",
+      "next_billed_at": "2024-09-06T09:11:18.855Z",
       "paused_at": null,
       "scheduled_change": null,
-      "started_at": "2024-08-29T16:12:10.967Z",
+      "started_at": "2024-08-30T09:11:18.855Z",
+      "custom_data": { "customer_id": "2lN8BwhpfGzI5pP7domN3P0DcMU" },
       "items": [
         {
           "price": {
@@ -39,21 +40,21 @@
             "type": "standard",
             "updated_at": "2024-08-12T09:38:32.005Z"
           },
-          "created_at": "2024-08-29T16:12:10.973Z",
-          "next_billed_at": "2024-09-05T16:12:10.967Z",
+          "created_at": "2024-08-30T09:11:18.86Z",
+          "next_billed_at": "2024-09-06T09:11:18.855Z",
           "previously_billed_at": null,
+          "price_id": null,
           "quantity": 1,
           "recurring": true,
           "status": "trialing",
-          "trial_dates": { "starts_at": "2024-08-29T16:12:10.967Z", "ends_at": "2024-09-05T16:12:10.967Z" },
-          "updated_at": "2024-08-29T16:12:10.973Z"
+          "trial_dates": { "starts_at": "2024-08-30T09:11:18.855Z", "ends_at": "2024-09-06T09:11:18.855Z" },
+          "updated_at": "2024-08-30T09:11:18.86Z"
         }
       ],
       "status": "trialing",
-      "transaction_id": "txn_01j6feg1rewxx4742qrnkd1f97",
-      "updated_at": "2024-08-29T16:12:10.973Z"
+      "transaction_id": "txn_01j6h8tfbmt61670vyq9farbyd",
+      "updated_at": "2024-08-30T09:11:18.86Z"
     }
   },
-  "occurred_at": "2024-08-29T16:12:11.546879Z"
+  "occurred_at": "2024-08-30T09:11:19.367924Z"
 }
-

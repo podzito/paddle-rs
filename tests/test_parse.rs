@@ -24,19 +24,23 @@ use rstest::rstest;
 use std::fs;
 
 #[rstest]
-// #[case("subscription-annual-created.json")]
+#[case("subscription-annual-created.json")]
 #[case("subscription-monthly-created.json")]
-// #[case("subscription-canceled.json")]
-// #[case("subscription-paused.json")]
-// #[case("subscription-resumed.json")]
-// #[case("subscription-updated.json")]
-// #[case("subscription-lifetime.json")]
-// #[case("transaction-completed.json")]
+#[case("subscription-canceled.json")]
+#[case("subscription-paused.json")]
+#[case("subscription-resumed.json")]
+#[case("subscription-updated.json")]
+#[case("subscription-lifetime.json")]
+#[case("transaction-completed.json")]
 fn test_sum(#[case] filename: &str) {
     use paddle::model::notification::Notification;
+    use serde_json::Value;
 
     let event_json = fs::read_to_string(format!("tests/data/notifications/{}", filename)).unwrap();
-    let notification: Notification = serde_json::from_str(&event_json).unwrap();
+    let notification: Notification = serde_json::from_str::<Value>(&event_json)
+        .unwrap()
+        .try_into()
+        .unwrap();
 
     println!(
         "notification: {:?}",

@@ -1,0 +1,43 @@
+{
+  "event_id": "evt_01j6h8vbhe17n19k4evb9rk6qn",
+  "notification_id": "ntf_01j6h8vbmj9kannx30nrr0qp57",
+  "event": {
+    "TransactionCompleted": {
+      "id": "txn_01j6h8tfbmt61670vyq9farbyd",
+      "customer_id": "ctm_01j535fawggst1gm3qsyanc0mb",
+      "items": [
+        {
+          "price": {
+            "billing_cycle": { "frequency": 1, "interval": "month" },
+            "created_at": "2024-08-12T09:42:40.160401Z",
+            "custom_data": null,
+            "description": "PodZito Pro - Monthly",
+            "id": "pri_01j52zfss0hcfxamnma1tf42gt",
+            "import_meta": null,
+            "name": "PodZito Pro",
+            "product_id": "pro_01j52z87e5sdt3p60mmtcavpgt",
+            "quantity": { "maximum": 1, "minimum": 1 },
+            "status": "active",
+            "tax_mode": "account_setting",
+            "trial_period": { "frequency": 7, "interval": "day" },
+            "type": "standard",
+            "unit_price": { "amount": "999", "currency_code": "USD" },
+            "updated_at": "2024-08-29T11:35:06.922573Z"
+          },
+          "product": null,
+          "created_at": null,
+          "next_billed_at": null,
+          "previously_billed_at": null,
+          "price_id": "pri_01j52zfss0hcfxamnma1tf42gt",
+          "quantity": 1,
+          "recurring": null,
+          "status": null,
+          "trial_dates": null,
+          "updated_at": null
+        }
+      ],
+      "custom_data": { "customer_id": "2lN8BwhpfGzI5pP7domN3P0DcMU" }
+    }
+  },
+  "occurred_at": "2024-08-30T09:11:19.854298Z"
+}

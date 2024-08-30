@@ -22,7 +22,7 @@
 
 use anyhow::{anyhow, Result};
 use derive_builder::Builder;
-use serde::{Deserialize, Deserializer, Serialize};
+use serde::{Deserialize, Serialize};
 use serde_json::Value;
 use time::{format_description::well_known::Rfc3339, OffsetDateTime};
 
@@ -38,7 +38,7 @@ use self::transaction::transaction_completed::TransactionCompleted;
 pub mod subscription;
 pub mod transaction;
 
-#[derive(Debug, Builder, Clone, PartialEq, Serialize)]
+#[derive(Debug, Builder, Clone, PartialEq, Serialize, Deserialize)]
 pub struct Notification {
     pub event_id: String,
     pub notification_id: String,
@@ -47,21 +47,11 @@ pub struct Notification {
     pub occurred_at: OffsetDateTime,
 }
 
-impl<'de> Deserialize<'de> for Notification {
-    fn deserialize<D>(deserializer: D) -> Result<Self, D::Error>
-    where
-        D: Deserializer<'de>,
-    {
-        let value = Value::deserialize(deserializer)?;
-        Notification::try_from(value).map_err(serde::de::Error::custom)
-    }
-}
-
 impl TryFrom<Value> for Notification {
     type Error = anyhow::Error;
 
     fn try_from(value: Value) -> Result<Self> {
-        let data = value.get("data").ok_or(anyhow!("Missing data"))?;
+        let data = value.get("data").ok_or(anyhow!("Missing top data"))?;
         let payload = data.get("payload").ok_or(anyhow!("Missing payload"))?;
 
         let event_id = get_str(payload, "event_id")?;
@@ -95,7 +85,7 @@ impl TryFrom<Value> for Event {
 
     fn try_from(value: Value) -> Result<Self, Self::Error> {
         let event_type = get_str(&value, "event_type")?;
-        let data = value.get("data").ok_or(anyhow!("Missing data"))?;
+        let data = value.get("data").ok_or(anyhow!("Missing event data"))?;
 
         if event_type == "subscription.created" {
             let subscription_created = serde_json::from_value(data.clone())?;

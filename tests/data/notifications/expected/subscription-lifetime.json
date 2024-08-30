@@ -1,0 +1,42 @@
+{
+  "event_id": "evt_01j6ffntn1m7vt4jpttvcm8y62",
+  "notification_id": "ntf_01j6ffntraahbc78qjaqpvta49",
+  "event": {
+    "TransactionCompleted": {
+      "id": "txn_01j6ffmn625kgf1qj2rec51mjy",
+      "customer_id": "ctm_01j535fawggst1gm3qsyanc0mb",
+      "items": [
+        {
+          "price": {
+            "billing_cycle": null,
+            "created_at": "2024-08-29T11:36:54.620513Z",
+            "custom_data": null,
+            "description": "PodZito Pro - Lifetime",
+            "id": "pri_01j6eys6jwj3msa87b7nknd6jc",
+            "import_meta": null,
+            "name": "PodZito Pro - Lifetime",
+            "product_id": "pro_01j52z87e5sdt3p60mmtcavpgt",
+            "quantity": { "maximum": 1, "minimum": 1 },
+            "status": "active",
+            "tax_mode": "account_setting",
+            "trial_period": null,
+            "type": "standard",
+            "unit_price": { "amount": "19900", "currency_code": "USD" },
+            "updated_at": "2024-08-29T11:36:54.620513Z"
+          },
+          "product": null,
+          "created_at": null,
+          "next_billed_at": null,
+          "previously_billed_at": null,
+          "price_id": "pri_01j6eys6jwj3msa87b7nknd6jc",
+          "quantity": 1,
+          "recurring": null,
+          "status": null,
+          "trial_dates": null,
+          "updated_at": null
+        }
+      ]
+    }
+  },
+  "occurred_at": "2024-08-29T16:32:09.889866Z"
+}

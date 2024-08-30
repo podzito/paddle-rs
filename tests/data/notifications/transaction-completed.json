@@ -1,11 +1,11 @@
 {
   "data": {
-    "id": "ntf_01j6feh8zxj4wm33tm5tzcbj9v",
+    "id": "ntf_01j6h8vbmj9kannx30nrr0qp57",
     "type": "transaction.completed",
     "status": "not_attempted",
     "payload": {
       "data": {
-        "id": "txn_01j6feg1rewxx4742qrnkd1f97",
+        "id": "txn_01j6h8tfbmt61670vyq9farbyd",
         "items": [
           {
             "price": {
@@ -48,7 +48,7 @@
           },
           "line_items": [
             {
-              "id": "txnitm_01j6fegee14w1w77jmswdw6a7h",
+              "id": "txnitm_01j6h8tmvq46cv4d2c6zyd7r3q",
               "totals": { "tax": "0", "total": "0", "discount": "0", "subtotal": "0" },
               "item_id": null,
               "product": {
@@ -97,12 +97,12 @@
             "currency_code": "USD"
           }
         },
-        "checkout": { "url": "https://www.podzito.com?_ptxn=txn_01j6feg1rewxx4742qrnkd1f97" },
+        "checkout": { "url": "https://www.podzito.com?_ptxn=txn_01j6h8tfbmt61670vyq9farbyd" },
         "payments": [
           {
             "amount": "0",
             "status": "authorized",
-            "created_at": "2024-08-29T16:12:08.800275Z",
+            "created_at": "2024-08-30T09:11:16.894562Z",
             "error_code": null,
             "captured_at": null,
             "method_details": {
@@ -115,34 +115,34 @@
               },
               "type": "card"
             },
-            "payment_method_id": "paymtd_01j6feh5pexyqx375c6w05096m",
-            "payment_attempt_id": "8ec324cd-0ab0-4afd-a41b-4ec33cfaab5c",
-            "stored_payment_method_id": "ab788bff-a489-484b-a563-adbfefe8e8ac"
+            "payment_method_id": "paymtd_01j6h8v8m5fpvqty4wrw65emp0",
+            "payment_attempt_id": "1fc69d73-3799-4f49-aeb2-4281783d48f1",
+            "stored_payment_method_id": "3439a864-1916-4b27-9f1c-3b4c70c29b5b"
           }
         ],
-        "billed_at": "2024-08-29T16:12:10.595167Z",
-        "address_id": "add_01j6fege3re5yv00dgrcfs1y6e",
-        "created_at": "2024-08-29T16:11:32.068945Z",
+        "billed_at": "2024-08-30T09:11:18.5943Z",
+        "address_id": "add_01j6h8tmg9n54yeb1rx5z6qxx5",
+        "created_at": "2024-08-30T09:10:51.071383Z",
         "invoice_id": null,
-        "updated_at": "2024-08-29T16:12:11.521858272Z",
+        "updated_at": "2024-08-30T09:11:19.335830797Z",
         "business_id": null,
-        "custom_data": null,
+        "custom_data": { "customer_id": "2lN8BwhpfGzI5pP7domN3P0DcMU" },
         "customer_id": "ctm_01j535fawggst1gm3qsyanc0mb",
         "discount_id": null,
         "receipt_data": null,
         "currency_code": "USD",
-        "billing_period": { "ends_at": "2024-09-05T16:12:10.967Z", "starts_at": "2024-08-29T16:12:10.967Z" },
+        "billing_period": { "ends_at": "2024-09-06T09:11:18.855Z", "starts_at": "2024-08-30T09:11:18.855Z" },
         "invoice_number": null,
         "billing_details": null,
         "collection_mode": "automatic",
-        "subscription_id": "sub_01j6feh7txspm3a0y0eyhgrs23"
+        "subscription_id": "sub_01j6h8vajcgzcapjyqqs6n65t0"
       },
-      "event_id": "evt_01j6feh8wcpps3nmvdcv5q7rw3",
+      "event_id": "evt_01j6h8vbhe17n19k4evb9rk6qn",
       "event_type": "transaction.completed",
-      "occurred_at": "2024-08-29T16:12:12.044189Z",
-      "notification_id": "ntf_01j6feh8zxj4wm33tm5tzcbj9v"
+      "occurred_at": "2024-08-30T09:11:19.854298Z",
+      "notification_id": "ntf_01j6h8vbmj9kannx30nrr0qp57"
     },
-    "occurred_at": "2024-08-29T16:12:12.044189Z",
+    "occurred_at": "2024-08-30T09:11:19.854298Z",
     "delivered_at": null,
     "replayed_at": null,
     "origin": "event",
@@ -151,6 +151,6 @@
     "times_attempted": 0,
     "notification_setting_id": "ntfset_01j5akfpdszj2r2prnsjbf0ytt"
   },
-  "meta": { "request_id": "48f279bc-94a6-4964-afe3-48b792fef0c4" }
+  "meta": { "request_id": "c8070792-25dc-481c-a730-c02237d3dee4" }
 }
 

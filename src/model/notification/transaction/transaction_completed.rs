@@ -20,6 +20,8 @@
 // OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
 // SOFTWARE.
 
+use std::collections::HashMap;
+
 use serde::{Deserialize, Serialize};
 
 use crate::model::shared::item::Item;
@@ -29,4 +31,5 @@ pub struct TransactionCompleted {
     pub id: String,
     pub customer_id: String,
     pub items: Vec<Item>,
+    pub custom_data: Option<HashMap<String, String>>,
 }
