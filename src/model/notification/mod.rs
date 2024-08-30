@@ -20,6 +20,8 @@
 // OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
 // SOFTWARE.
 
+use std::collections::HashMap;
+
 use anyhow::{anyhow, Result};
 use derive_builder::Builder;
 use serde::{Deserialize, Serialize};
@@ -78,6 +80,40 @@ pub enum Event {
     SubscriptionCanceled(SubscriptionCanceled),
     SubscriptionUpdated(SubscriptionUpdated),
     TransactionCompleted(TransactionCompleted),
+}
+
+pub trait CustomData {
+    fn custom_data(&self) -> &Option<HashMap<String, String>>;
+}
+
+impl CustomData for Event {
+    fn custom_data(&self) -> &Option<HashMap<String, String>> {
+        match self {
+            Event::SubscriptionCreated(subscription_created) => subscription_created.custom_data(),
+            Event::SubscriptionCanceled(subscription_canceled) => {
+                subscription_canceled.custom_data()
+            }
+            Event::SubscriptionUpdated(subscription_updated) => subscription_updated.custom_data(),
+            Event::TransactionCompleted(transaction_completed) => {
+                transaction_completed.custom_data()
+            }
+        }
+    }
+}
+
+pub trait EventType {
+    fn event_type(&self) -> &'static str;
+}
+
+impl EventType for Event {
+    fn event_type(&self) -> &'static str {
+        match self {
+            Event::SubscriptionCreated(_) => "subscription.created",
+            Event::SubscriptionCanceled(_) => "subscription.canceled",
+            Event::SubscriptionUpdated(_) => "subscription.updated",
+            Event::TransactionCompleted(_) => "transaction.completed",
+        }
+    }
 }
 
 impl TryFrom<Value> for Event {

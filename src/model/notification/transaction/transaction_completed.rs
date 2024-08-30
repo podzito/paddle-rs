@@ -24,7 +24,7 @@ use std::collections::HashMap;
 
 use serde::{Deserialize, Serialize};
 
-use crate::model::shared::item::Item;
+use crate::model::{notification::CustomData, shared::item::Item};
 
 #[derive(Debug, PartialEq, Clone, Serialize, Deserialize)]
 pub struct TransactionCompleted {
@@ -32,4 +32,10 @@ pub struct TransactionCompleted {
     pub customer_id: String,
     pub items: Vec<Item>,
     pub custom_data: Option<HashMap<String, String>>,
+}
+
+impl CustomData for TransactionCompleted {
+    fn custom_data(&self) -> &Option<HashMap<String, String>> {
+        &self.custom_data
+    }
 }

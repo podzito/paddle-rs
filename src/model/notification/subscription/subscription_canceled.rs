@@ -25,9 +25,12 @@ use std::collections::HashMap;
 use serde::{Deserialize, Serialize};
 use time::OffsetDateTime;
 
-use crate::model::shared::{
-    item::Item,
-    subscription::{BillingCycle, SubscriptionStatus},
+use crate::model::{
+    notification::CustomData,
+    shared::{
+        item::Item,
+        subscription::{BillingCycle, SubscriptionStatus},
+    },
 };
 
 #[derive(Debug, PartialEq, Clone, Serialize, Deserialize)]
@@ -46,4 +49,10 @@ pub struct SubscriptionCanceled {
     pub status: SubscriptionStatus,
     #[serde(with = "time::serde::rfc3339")]
     pub updated_at: OffsetDateTime,
+}
+
+impl CustomData for SubscriptionCanceled {
+    fn custom_data(&self) -> &Option<HashMap<String, String>> {
+        &self.custom_data
+    }
 }
