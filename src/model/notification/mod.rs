@@ -84,6 +84,12 @@ pub enum Event {
 
 pub trait CustomData {
     fn custom_data(&self) -> &Option<HashMap<String, String>>;
+
+    fn customer_kid(&self) -> Option<String> {
+        self.custom_data()
+            .as_ref()
+            .and_then(|data| data.get("customer_id").cloned())
+    }
 }
 
 impl CustomData for Event {

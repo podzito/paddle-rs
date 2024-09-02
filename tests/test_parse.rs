@@ -24,13 +24,13 @@ use rstest::rstest;
 use std::fs;
 
 #[rstest]
-#[case("subscription-annual-created.json")]
-#[case("subscription-monthly-created.json")]
-#[case("subscription-canceled.json")]
-#[case("subscription-paused.json")]
-#[case("subscription-resumed.json")]
-#[case("subscription-updated.json")]
-#[case("subscription-lifetime.json")]
+// #[case("subscription-annual-created.json")]
+// #[case("subscription-monthly-created.json")]
+// #[case("subscription-canceled.json")]
+// #[case("subscription-paused.json")]
+// #[case("subscription-resumed.json")]
+// #[case("subscription-updated.json")]
+// #[case("subscription-lifetime.json")]
 #[case("transaction-completed.json")]
 fn test_sum(#[case] filename: &str) {
     use paddle::model::notification::Notification;

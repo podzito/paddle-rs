@@ -35,6 +35,8 @@ use crate::model::{
 
 #[derive(Debug, PartialEq, Clone, Serialize, Deserialize)]
 pub struct SubscriptionCanceled {
+    pub id: String,
+    pub customer_id: String,
     pub billing_cycle: BillingCycle,
     #[serde(with = "crate::util::serde::option_rfc3339")]
     pub next_billed_at: Option<OffsetDateTime>,

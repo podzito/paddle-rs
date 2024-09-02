@@ -3,11 +3,14 @@
   "notification_id": "ntf_01j6fern2s2grg7mnqgrj5s79e",
   "event": {
     "SubscriptionUpdated": {
+      "id": "sub_01j6feh7txspm3a0y0eyhgrs23",
+      "customer_id": "ctm_01j535fawggst1gm3qsyanc0mb",
       "billing_cycle": { "frequency": 1, "interval": "month" },
       "next_billed_at": null,
       "paused_at": "2024-08-29T16:16:12.816Z",
       "scheduled_change": null,
       "started_at": "2024-08-29T16:12:10.967Z",
+      "custom_data": null,
       "items": [
         {
           "price": {
@@ -42,6 +45,7 @@
           "created_at": "2024-08-29T16:12:10.973Z",
           "next_billed_at": null,
           "previously_billed_at": "2024-08-29T16:15:36.182Z",
+          "price_id": null,
           "quantity": 1,
           "recurring": true,
           "status": "active",

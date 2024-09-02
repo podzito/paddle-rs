@@ -64,12 +64,12 @@ pub enum ItemType {
 
 #[derive(Debug, PartialEq, Clone, Serialize, Deserialize)]
 pub struct Price {
+    pub id: String,
     pub billing_cycle: Option<BillingCycle>,
     #[serde(with = "time::serde::rfc3339")]
     pub created_at: OffsetDateTime,
     pub custom_data: Option<HashMap<String, String>>,
     pub description: String,
-    pub id: String,
     pub import_meta: Option<String>,
     pub name: String,
     pub product_id: String,
